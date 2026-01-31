@@ -57,6 +57,23 @@
 
     footer{border-top:1px solid #eef0f3; padding:24px 0}
 
+    .whatsapp-float{
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      background: #25D366;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,.2);
+      z-index: 999;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover{ filter: brightness(1.05); }
+    .whatsapp-float svg{ width: 28px; height: 28px; fill: #fff; }
+
     @media (max-width: 900px){
       .hero-grid{grid-template-columns: 1fr}
       .services{grid-template-columns: repeat(2,1fr)}
@@ -70,7 +87,6 @@
     <div class="container nav">
       <div class="brand">
         <div class="logo" aria-label="Símbolo Arcanum">
-          <!-- Ícone minimalista (triângulo + círculo) em SVG -->
           <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <polygon points="50,10 90,85 10,85" stroke="#0f4c5c" stroke-width="6" fill="none"/>
             <circle cx="50" cy="55" r="8" fill="#f2c14e"/>
@@ -146,6 +162,7 @@
     <section id="contato">
       <div class="container">
         <h2 class="section-title">Contato</h2>
+        <p class="muted"><strong>Telefone / WhatsApp:</strong> (16) 99255-3003</p>
         <div class="card">
           <form onsubmit="event.preventDefault(); alert('Mensagem enviada! Em breve entraremos em contato.');">
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px">
@@ -161,8 +178,19 @@
   </main>
 
   <footer>
-    <div class="container muted">© <span id="year"></span> ARCANUM Propriedade Intelectual. Todos os direitos reservados.</div>
+    <div class="container muted">
+      © <span id="year"></span> ARCANUM Propriedade Intelectual. Todos os direitos reservados. • Contato: (16) 99255-3003
+    </div>
   </footer>
+
+  <a class="whatsapp-float" 
+     href="https://wa.me/5516992553003?text=Olá!%20Gostaria%20de%20informações%20sobre%20registro%20de%20marca." 
+     target="_blank" 
+     aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.04 2.003c-7.72 0-14.01 6.29-14.01 14.01 0 2.47.65 4.88 1.89 7L2 30l7.2-1.88a13.9 13.9 0 0 0 6.84 1.77h.01c7.72 0 14.01-6.29 14.01-14.01 0-3.75-1.46-7.28-4.11-9.93a13.95 13.95 0 0 0-9.9-4.11zm0 25.7h-.01a11.67 11.67 0 0 1-5.96-1.63l-.43-.26-4.27 1.11 1.14-4.16-.28-.43a11.66 11.66 0 0 1-1.8-6.21c0-6.45 5.25-11.7 11.71-11.7 3.12 0 6.06 1.21 8.27 3.43a11.6 11.6 0 0 1 3.43 8.27c0 6.45-5.25 11.7-11.8 11.7z"/>
+    </svg>
+  </a>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
